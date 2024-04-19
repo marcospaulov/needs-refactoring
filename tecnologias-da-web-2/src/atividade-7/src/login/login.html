@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./scripts.js" defer></script>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <header class="w-full h-[45px] bg-white flex items-center justify-center text-[#04c9f4]">
+        <h2>Agenda de contatos</h2>
+    </header>
+
+    <main class="w-full h-[93vh] bg-[#e7e7e7] flex items-center justify-center flex-col">
+
+        <section class="w-[360px] h-[400px] bg-[#D9D9D9] flex items-center justify-center flex-col gap-2">
+            <div>
+                <img src="../images/Logo.jpg" alt="Logo" class="w-[140px] h-[120px]">
+            </div>
+            <form class="w-full h-[180px] flex items-center justify-center flex-col gap-2">
+                <label for="user" class="h-[60px] flex flex-col">
+                    <span id="userError" class="h-[20px] text-sm text-red-500"></span>
+                    <input type="text" name="user" id="user" placeholder="Usuário"
+                        class="w-[260px] h-[35px] pl-3 border">
+                </label>
+
+                <label for="password" class="h-[60px] flex flex-col">
+                    <span id="passwordError" class="h-[20px] text-sm text-red-500"></span>
+                    <input type="password" name="password" id="password" placeholder="Senha"
+                        class="w-[260px] h-[35px] pl-3 border">
+                </label>
+
+                <button type="button"
+                    class="w-[120px] h-[40px] bg-[#04c9f4] text-[#ffff] hover:bg-white hover:text-black"
+                    onclick="fieldValidade()">Entrar</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

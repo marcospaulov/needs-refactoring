@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');@import url('./default.css');
+
+section {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+section ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+section ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section h1 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+section p {
+    max-width: 100%;
+}
+
+section figure {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1198px) {
+    section figure {
+        flex-direction: column;
+    }
+}
+
+section figure img {
+    width: 50%;
+    height: 50%;
+}
+
+section figure figcaption {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="./scripts.js" defer></script>
+	<title>Dashboard</title>
+</head>
+
+<body>
+	<header class="w-screen h-[43px] flex items-center justify-center bg-[#04C9F4] text-white">
+		Cadastro de Contato
+	</header>
+
+	<main class="w-screen h-[92vh] flex items-center justify-center flex-col">
+		<article class="w-screen h-[260px] flex items-center justify-center">
+			<section>
+				<form action="" class="w-[455px] h-[250px] bg-[#D9D9D9] flex items-center p-3 flex-wrap gap-2">
+					<label for="name">
+						<p>Nome</p>
+						<input type="text" id="name" class="w-[211px] h-[42px] pl-2">
+					</label>
+					<label for="surname">
+						<p>Sobrenome</p>
+						<input type="text" id="surname" class="w-[211px] h-[42px] pl-2">
+					</label>
+					<label for="adress">
+						<p>Endereço</p>
+						<input type="text" id="adress" class="w-[422px] h-[42px] pl-2">
+					</label>
+					<label for="phone">
+						<p>Telefone</p>
+						<input type="text" id="phone" class="w-[211px] h-[42px] pl-2">
+					</label>
+				</form>
+			</section>
+			<section class="flex flex-col gap-2 ml-2">
+
+				<button id="btn-insert" class="w-[211px] h-[42px] bg-[#068622]" disabled onclick="insertButton()">Incluir</button>
+				<button id="btn-edit" class="w-[211px] h-[42px] bg-[#FD9800]" disabled onclick="habilityInput()">Editar</button>
+				<button id="btn-save" class="w-[211px] h-[42px] bg-[#04C9F4]" onclick="save()">Salvar</button>
+				<button id="btn-cancel" class="w-[211px] h-[42px] bg-[#FFFFFF]" onclick="cancel()">Cancelar</button>
+				<button id="btn-delete" class="w-[211px] h-[42px] bg-[#F40404]" disabled onclick="removeInArray()">Excluir</button>
+
+			</section>
+		</article>
+		<Section class="w-[672px] flex items-center justify-start gap-1">
+			<button class="w-[90px] h-[42px] bg-[#000000] text-white" onclick="firtsRegisterInArray()">|< </button>
+					<button class="w-[90px] h-[42px] bg-[#000000] text-white" onclick="previousRegisterInArray()">
+						< </button>
+							<button class="w-[90px] h-[42px] bg-[#000000] text-white" onclick="nextRegisterInArray()">></button>
+							<button class="w-[90px] h-[42px] bg-[#000000] text-white" onclick="finalRegisterInArray()">>|</button>
+		</Section>
+	</main>
+</body>
+
+</html>

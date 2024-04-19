@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String            @id @default(uuid())
+  CPF             String            @unique
+  email           String            @unique
+  name            String
+  lastName        String
+  password        String
+  sex             String
+  phone           String
+  birthdate       String
+  CEP             String
+  number          String
+  address         String
+  city            String
+  UF              String
+  rent            Rent[]
+  products        Product[]
+  itensRentalRent ItensRentalRent[]
+  createdAT       DateTime          @default(now())
+  updateAT        DateTime          @updatedAt
+}
+
+model Product {
+  id                 String            @id @default(uuid())
+  name               String            @unique
+  productType        String
+  productDescription String
+  price              Float             @default(0)
+  measure            String
+  brand              String
+  tissueType         String
+  userId             String
+  user               User              @relation(fields: [userId], references: [id])
+  itemsRentalRent    ItensRentalRent[]
+  createdAT          DateTime          @default(now())
+  updateAT           DateTime          @updatedAt
+}
+
+model Rent {
+  id              String            @id @default(uuid())
+  insuranceValue  Float             @default(0)
+  productsValue   Float             @default(0)
+  totalValue      Float             @default(0)
+  userId          String
+  createdAT       DateTime          @default(now())
+  updateAT        DateTime          @updatedAt
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ItemsRentalRent ItensRentalRent[]
+}
+
+model ItensRentalRent {
+  id        String   @id @default(uuid())
+  productId String   @unique
+  rentId    String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rent      Rent     @relation(fields: [rentId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAT DateTime @default(now())
+  updateAT  DateTime @updatedAt
+}
